@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git rm *)",
+      "Bash(npx tsc *)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm run *)",
+      "Bash(echo \"started, pid: $!\")",
+      "Bash(cat \"/c/Users/석준/AppData/Local/Temp/claude/c--alom-web-dashboard/ba883e62-e0de-458a-babc-a90044172a68/tasks/bb6t5r2ay.output\")",
+      "Read(//c/Users/석준/AppData/Local/Temp/claude/c--alom-web-dashboard/ba883e62-e0de-458a-babc-a90044172a68/tasks/**)",
+      "Bash(curl -s -o /dev/null -w \"GET / -> %{http_code} redirect:%{redirect_url}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"GET /login -> %{http_code}\\\\n\" http://localhost:3000/login)",
+      "Bash(curl -s -o /dev/null -w \"GET /members -> %{http_code} redirect:%{redirect_url}\\\\n\" http://localhost:3000/members)",
+      "Bash(curl -s http://localhost:3000/login)",
+      "Bash(curl -s -o /dev/null -w \"GET /members with cookie -> %{http_code}\\\\n\" -H \"Cookie: alom_token=dev-token\" http://localhost:3000/members)"
+    ]
+  }
+}
