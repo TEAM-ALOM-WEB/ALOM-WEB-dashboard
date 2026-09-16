@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { createColumnHelper, tableFeatures, useTable } from "@tanstack/react-table";
 
 import {
@@ -17,11 +18,17 @@ const features = tableFeatures({});
 const columnHelper = createColumnHelper<typeof features, Member>();
 
 const columns = columnHelper.columns([
-  columnHelper.accessor("name", { header: "이름" }),
-  columnHelper.accessor("cohort", { header: "기수" }),
-  columnHelper.accessor("track", { header: "파트" }),
-  columnHelper.accessor("role", { header: "권한" }),
-  columnHelper.accessor("email", { header: "이메일" }),
+  columnHelper.accessor("name", {
+    header: "이름",
+    cell: (info) => (
+      <Link href={`/members/${info.row.original.id}`} className="font-medium hover:underline">
+        {info.getValue()}
+      </Link>
+    ),
+  }),
+  columnHelper.accessor("position", { header: "직책" }),
+  columnHelper.accessor("studentId", { header: "학번" }),
+  columnHelper.accessor("department", { header: "학과" }),
 ]);
 
 const EMPTY_DATA: Member[] = [];

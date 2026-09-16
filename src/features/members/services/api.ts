@@ -1,12 +1,11 @@
-import { api } from "@/lib/axios";
+import { mockMembers } from "@/features/members/data/mock-members";
 import type { Member } from "@/features/members/types";
 
+// TODO: 커스텀 REST API의 /members 엔드포인트로 교체
 export async function getMembers(): Promise<Member[]> {
-  const { data } = await api.get<Member[]>("/members");
-  return data;
+  return mockMembers;
 }
 
-export async function getMember(id: string): Promise<Member> {
-  const { data } = await api.get<Member>(`/members/${id}`);
-  return data;
+export async function getMember(id: string): Promise<Member | undefined> {
+  return mockMembers.find((member) => member.id === id);
 }

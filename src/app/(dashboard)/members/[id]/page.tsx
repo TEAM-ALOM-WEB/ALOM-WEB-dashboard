@@ -24,10 +24,9 @@ export default function MemberDetailPage({ params }: PageProps<"/members/[id]">)
         <CardTitle>{member.name}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-2 text-sm">
-        <p>기수: {member.cohort}</p>
-        <p>파트: {member.track}</p>
-        <p>권한: {member.role}</p>
-        <p>이메일: {member.email}</p>
+        <p>직책: {member.position}</p>
+        <p>학번: {member.studentId}</p>
+        <p>학과: {member.department}</p>
       </CardContent>
     </Card>
   );
